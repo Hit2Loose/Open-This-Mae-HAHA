@@ -1,0 +1,183 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+    margin: 0;
+    height: 90px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    touch-action: pan-y;
+    background: url(beach.gif) center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-size: 1920px 1080px;
+    
+
+}
+/* Header */
+.header{
+    margin: 5ch;
+    text-align: center;
+}
+
+.header h2{
+    margin-top: 5ch;
+}
+
+.header p{
+  margin-top: 1vh;
+  font-size: 100%;
+}
+
+/* contianer */
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+
+.letter-container {
+    color: black;
+    width: 350px;
+    height: 300px;
+    background-color: #f59a9a;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.6s;
+    border: 1px solid black;
+}
+
+.letter-container:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.inner-letter{
+    font-weight: 300;
+}
+
+.inner-letter span{
+    font-weight: 900;
+    color: rgb(6, 31, 255);
+}
+
+/* contianer animation */
+
+.letter-container.unfold .top-fold {
+    transform: rotateX(-180deg);
+  }
+
+.letter-container.unfold .bottom-fold {
+    transform: rotateX(180deg);
+  }
+
+
+.fold {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #f78888;
+    transition: transform 0.6s;
+    transform-origin: top;
+    backface-visibility: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
+.top-fold {
+    top: 0;
+    left: 0;
+}
+
+.bottom-fold {
+    left: 0;
+    top: 50%;
+    transform-origin: bottom;
+}
+
+
+.inner-letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+    width: 80%; /* Prevents text from stretching too wide */
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s 0.3s;
+    font-size: 80%;
+}
+
+.letter-container.unfold .inner-letter {
+  opacity: 1;
+}
+
+
+/* heart */
+
+.heart-button {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  font-size: 70px;
+  cursor: pointer;
+  opacity: 1; /* Start with full opacity */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  text-decoration: none;
+  }
+
+    
+  .heart-button:active {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Small bounce effect */
+  }
+  
+  
+  /* Fade-in effect for heart button */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 5s ease-in; /* Smooth fade-in transition */
+  }
+  .fade-in.show {
+    opacity: 1; /* Fully visible */
+  }
+  
+  /* image flower */
+  .flower{
+  justify-content: center;
+  padding-top: 10vh;
+  display: flex;
+  height: 30%;
+  text-align: center;
+}
+
+.flower img{
+  border: 1px solid black;
+}
+
+
+.flower img:hover{
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+}
+
+footer{
+  text-align: center;
+  padding-top: 5vh;
+  color: rgb(252, 252, 252);
+
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
